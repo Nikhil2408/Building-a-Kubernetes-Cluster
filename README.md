@@ -57,4 +57,8 @@ sudo docker version
 ```
 ![](images/6.png)
 
-If you are able to see the above information after running <b>sudo docker version</b> command then you have successfully installed Docker and your Docker is up and running.
+If you are able to see the above information after running <b>sudo docker version</b> command then you have successfully installed Docker on the master node and your Docker is up and running.
+
+<b>Note:</b>
+Repeat the same commands of installing Docker on both the worker nodes as you did on master node. After installing Docker on both the worker nodes, make sure to verify the docker is working or not. I am not showing here because it is the same process.
+
