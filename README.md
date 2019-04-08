@@ -10,5 +10,25 @@ Hello everyone, you are welcome to make use of this guide and learn from it but 
 <h2> Let's Start the Guide </h2>
 Kubernetes (K8s) is an open-source system for automating deployment, scaling, and management of containerized applications. It automates the application infrastructure and make it easy to manage it. Kubernetes is all about managing containers. Hope you know well about containers like what they are, how they are more efficient and faster than virtual machines. Go and have a look on the basics of containers before starting to build your K8s cluster.
 
-
 Docker is the container runtime we will be using. A container runtime is the software that actually runs the containers. Kubernetes supports several other container runtimes such as rkt and containerd but Docker is the most popular.
+
+The first step in building the cluster is to install Docker(container runtime) on 3 servers. You will be requiring 3 Ubuntu servers to build a Kubernetes cluster.
+One server will act as a master node and other 2 servers as worker nodes.
+First install Docker on master node.
+<h3> Installing Docker </h3>
+<h4>1. Add the Docker repository GPG key </h4>
+
+```javascript
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+![](images/1.png)
+<h4>2. Add the Docker repository </h4>
+
+```javascript
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+```
+![](images/2.png)
+
