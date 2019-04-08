@@ -50,3 +50,11 @@ sudo apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu
 sudo apt-mark hold docker-ce
 ```
 ![](images/5.png)
+
+Now, verify whether the Docker is working or not by running this command
+```javascript
+sudo docker version
+```
+![](images/6.png)
+
+If you are able to see the above information after running <b>sudo docker version</b> command then you have successfully installed Docker and your Docker is up and running.
