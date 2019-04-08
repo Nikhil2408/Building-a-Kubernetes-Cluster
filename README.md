@@ -31,4 +31,22 @@ sudo add-apt-repository \
    stable"
 ```
 ![](images/2.png)
+<h4> 3. Update the system </h4>
+It is advisable to run this before installing any package and necessary to run it to install the latest updates.
 
+```javascript
+sudo apt-get update
+```
+![](images/3.png)
+<h4> 4. Install Docker </h4>
+
+```javascript
+sudo apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu
+```
+![](images/4.png)
+<h4> 5. Prevent auto-updates for the Docker package </h4>
+
+```javascript
+sudo apt-mark hold docker-ce
+```
+![](images/5.png)
