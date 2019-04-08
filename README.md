@@ -62,3 +62,11 @@ If you are able to see the above information after running <b>sudo docker versio
 <b>Note:</b>
 Repeat the same commands of installing Docker on both the worker nodes as you did on master node. After installing Docker on both the worker nodes, make sure to verify the docker is working or not. I am not showing here because it is the same process.
 
+<h3> Installing Kubeadm, Kubelet, and Kubectl </h3>
+Now that Docker is installed, we are ready to install the Kubernetes components.
+
+* <b>Kubeadm</b> - This is a tool which automates a large portion of the process of setting up a cluster.
+
+* <b>Kubelet</b> - The essential component of K8s that handles running containers on a node. Every server that will be running container needs kubelet.
+
+* <b>Kubectl</b> - Command line tool for interacting with the cluster once it is up. kubectl is used to manage the cluster.
