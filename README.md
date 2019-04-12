@@ -110,3 +110,62 @@ After installing these components, verify that kubeadm is working properly. You 
 kubeadm version
 ```
 ![](images/12.png)
+
+<b>Note:</b>
+Repeat the same commands of installing Kubelet, Kubectl and Kubeadm on both the worker nodes as you did on master node. After installing these components on both the worker nodes, make sure to verify that kubeadm is working or not. I am not showing here because it is the same process.
+
+<h3> Bootstrapping the Cluster </h3>
+
+<h4> 1. Initialize the Cluster </h4>
+Intializing the cluster command should only be run on master node. This command will take few minutes to complete. Make sure not to clear the screen after running this command.
+
+```javascript
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+```
+![](images/13.png)
+
+The special pod network cidr is a setting that will be used later for the flannel networking plugin.
+
+<h4> 2. Setting up the local kubeconfig </h4>
+When you have ran the above command, the output displayed at the end will look something like this.
+![](images/14.png)
+
+Some commands will be displayed under "To start using the cluster, you need to run the following as a regular user". Execute them on the master node.
+
+```javascript
+mkdir -p $HOME/.kube
+```
+![](images/15.png)
+
+```javascript
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+```
+![](images/16.png)
+
+```javascript
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+![](images/17.png)
+
+<h4> 3. Verify that the cluster is responsive and that Kubectl is working </h4>
+
+```javascript
+kubectl version
+```
+![](images/18.png)
+
+<h4> 4. Joining the other worker nodes with the master node to form a cluster </h4>
+The output of the kubeadm init command i.e. output of the first step of bootstrapping the cluster contains a kubeadm join command. Copy that command and run it with sudo on both the worker nodes. Kubeadm command looks something like this:
+
+```javascript
+sudo kubeadm join $some_ip:6443 --token $some_token --discovery-token-ca-cert-hash $some_hash
+```
+Executing kubeadm join command on both worker nodes
+
+1st worker node:
+
+![](images/19.png)
+
+2nd worker node:
+
+![](images/20.png)
