@@ -104,3 +104,9 @@ sudo apt-get install -y kubelet=1.12.7-00 kubeadm=1.12.7-00 kubectl=1.12.7-00
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 ![](images/11.png)
+After installing these components, verify that kubeadm is working properly. You can verify using
+
+```javascript
+kubeadm version
+```
+![](images/12.png)
