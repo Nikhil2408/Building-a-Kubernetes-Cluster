@@ -70,3 +70,37 @@ Now that Docker is installed, we are ready to install the Kubernetes components.
 * <b>Kubelet</b> - The essential component of K8s that handles running containers on a node. Every server that will be running container needs kubelet.
 
 * <b>Kubectl</b> - Command line tool for interacting with the cluster once it is up. kubectl is used to manage the cluster.
+
+Let's install kubeadm, kubelet and kubectl on all three servers.
+<h4> 1. Add the Kubernetes repository GPG key </h4>
+
+```javascript
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+```
+![](images/7.png)
+<h4> 2. Add the Kubernetes repository </h4>
+
+```javascript
+cat << EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+```
+![](images/8.png)
+<h4> 3. Update the system </h4>
+
+```javascript
+sudo apt-get update
+```
+![](images/9.png)
+<h4> 4. Install Packages </h4>
+
+```javascript
+sudo apt-get install -y kubelet=1.12.7-00 kubeadm=1.12.7-00 kubectl=1.12.7-00
+```
+![](images/10.png)
+<h4> 5. Prevent auto-updates for the Kube packages </h4>
+
+```javascript
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+![](images/11.png)
