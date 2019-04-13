@@ -67,7 +67,7 @@ Now that Docker is installed, we are ready to install the Kubernetes components.
 
 * <b>Kubeadm</b> - This is a tool which automates a large portion of the process of setting up a cluster.
 
-* <b>Kubelet</b> - The essential component of K8s that handles running containers on a node. Every server that will be running container needs kubelet.
+* <b>Kubelet</b> - The essential component of K8s that handles running containers on a node. Every server that will be running containers needs kubelet.
 
 * <b>Kubectl</b> - Command line tool for interacting with the cluster once it is up. kubectl is used to manage the cluster.
 
