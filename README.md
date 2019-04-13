@@ -128,6 +128,7 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 The special pod network cidr is a setting that will be used later for the flannel networking plugin.
 
 <h4> 2. Setting up the local kubeconfig </h4>
+
 When you have ran the above command, the output displayed at the end will look something like this.
 
 ![](images/14.png)
