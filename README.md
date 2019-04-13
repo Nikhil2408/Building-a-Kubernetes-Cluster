@@ -198,3 +198,32 @@ echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 ```
 ![](images/23.png)
+
+I have shown only for master node as it will be the same process when done on other worker nodes.
+<h4> 2. Install Flannel in the cluster by running this only on the Master node </h4>
+
+On the master node, use kubectl to install Flannel using a YAML template
+
+```javascript
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
+```
+![](images/24.png)
+
+<h4> 3. Verify that all the nodes now have a Ready status </h4>
+
+```javascript
+kubectl get nodes
+```
+![](images/25.png)
+
+<b>Note:</b> It may take a few moments for all nodes to enter the Ready status, so if they are not all Ready, wait a few moments and try again.
+
+<h4> 4. It is good to check the flannel pods are up and running or not </h4>
+
+Run this command to get a list of pods present in kube-system namespace
+
+```javascript
+kubectl get pods -n kube-system
+```
+![](images/26.png)
+
