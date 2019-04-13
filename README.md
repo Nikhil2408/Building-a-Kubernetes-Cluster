@@ -229,3 +229,4 @@ kubectl get pods -n kube-system
 ```
 ![](images/26.png)
 
+You have successfully build your Kubernetes Cluster.
