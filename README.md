@@ -1,5 +1,5 @@
 # Building a Kubernetes Cluster
-This repository acts as a guide to build a Kubernetes Cluster of 3 nodes with Kubeadm.
+This repository acts as a guide to build a Kubernetes Cluster of 3 nodes using Kubeadm.
 
 ![](images/kubernetes%20icon%201.png)
 
