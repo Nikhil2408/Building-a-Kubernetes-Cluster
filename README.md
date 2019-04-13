@@ -220,7 +220,7 @@ kubectl get nodes
 
 <h4> 4. It is good to check the flannel pods are up and running or not </h4>
 
-Run this command to get a list of pods present in kube-system namespace
+Run this command to get a list of pods present in kube-system namespace. You will see that you have three pods of flannel and make sure they are all up and running.
 
 ```javascript
 kubectl get pods -n kube-system
