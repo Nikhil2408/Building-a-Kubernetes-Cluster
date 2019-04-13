@@ -187,7 +187,7 @@ Kubernetes supports the variety of networking solutions to provide networking be
 
 <b>Note:</b> Down below I have written that which command must be run on which node so make sure you do the same
 
-On all the three nodes i.e. master node and two worker nodes run the following command
+1. On all the three nodes i.e. master node and two worker nodes run the following command
 
 ```javascript
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
