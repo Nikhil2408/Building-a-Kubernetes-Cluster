@@ -175,13 +175,13 @@ Executing kubeadm join command on both worker nodes
 
 <h4> 5. Verifying the nodes in the cluster </h4>
 
-Now let's verify that our cluster is setup properly. From the master node, get a list of nodes with kubectl
+Now let's verify that our cluster is setup properly. From the master node, get a list of nodes with kubectl.
 
 ```javascript
 kubectl get nodes
 ```
 ![](images/21.png)
-The nodes will be in NotReady status until we setup networking. So lets set up the networking.
+The nodes will be in NotReady status until we setup networking. So let's set up the networking.
 
 <h3> Configuring Networking with Flannel </h3>
 
