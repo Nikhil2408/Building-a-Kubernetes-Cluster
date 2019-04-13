@@ -173,7 +173,7 @@ Executing kubeadm join command on both worker nodes
 
 ![](images/20.png)
 
-<h4> Verifying the nodes in the cluster </h4>
+<h4> 5. Verifying the nodes in the cluster </h4>
 
 Now let's verify that our cluster is setup properly. From the master node, get a list of nodes with kubectl
 
