@@ -187,7 +187,7 @@ The nodes will be in NotReady status until we setup networking. So let's set up 
 
 Kubernetes supports the variety of networking solutions to provide networking between containers. We will be using <b>Flannel</b>. You can find more information on Flannel at the official site: https://coreos.com/flannel/docs/latest/.
 
-<b>Note:</b> Down below I have written that which command must be run on which node so make sure you do the same.
+<b>Note:</b> Down below I have written that which command should be run on which node so make sure you do the same.
 
 <h4> 1. On all the three nodes i.e. master node and two worker nodes run the following command </h4>
 
@@ -201,7 +201,7 @@ sudo sysctl -p
 ```
 ![](images/23.png)
 
-I have shown only for master node as it will be the same process when done on other worker nodes.
+I have shown only for the master node as it will be the same process when done on other worker nodes.
 <h4> 2. Install Flannel in the cluster by running this only on the Master node </h4>
 
 On the master node, use kubectl to install Flannel using a YAML template
