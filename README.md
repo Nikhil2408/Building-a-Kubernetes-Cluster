@@ -170,3 +170,31 @@ Executing kubeadm join command on both worker nodes
 2nd worker node:
 
 ![](images/20.png)
+
+<h4> Verifying the nodes in the cluster </h4>
+
+Now let's verify that our cluster is setup properly. From the master node, get a list of nodes with kubectl
+
+```javascript
+kubectl get nodes
+```
+![](images/21.png)
+The nodes will be in NotReady status until we setup networking. So lets set up the networking.
+
+<h3> Configuring Networking with Flannel </h3>
+
+Kubernetes supports the variety of networking solutions to provide networking between containers. We will be using <b>Flannel</b>. You can find more information on Flannel at the official site: https://coreos.com/flannel/docs/latest/.
+
+<b>Note:</b> Down below I have written that which command must be run on which node so make sure you do the same
+
+On all the three nodes i.e. master node and two worker nodes run the following command
+
+```javascript
+echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
+```
+![](images/22.png)
+
+```javascript
+sudo sysctl -p
+```
+![](images/23.png)
